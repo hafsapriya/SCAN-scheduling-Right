@@ -1,0 +1,11 @@
+req = [0, 13, 41, 50, 63, 89, 100]
+head = 46
+right = sorted([x for x in req if x >= head])
+left = sorted([x for x in req if x < head], reverse=True)
+order = right + left
+total = 0
+for x in order:
+  total += abs(x-head)
+  head = x
+  print("Scan Order:", order)
+print("Head Movement", total)
